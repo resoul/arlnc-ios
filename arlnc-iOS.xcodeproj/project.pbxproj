@@ -15,6 +15,7 @@
 		89D199712B95187800CEB73F /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D199702B95187800CEB73F /* Constraints.swift */; };
 		89D199732B9519A100CEB73F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D199722B9519A100CEB73F /* UIView.swift */; };
 		89D199752B951B7F00CEB73F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D199742B951B7F00CEB73F /* UIColor.swift */; };
+		89D1999B2B96394600CEB73F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1999A2B96394600CEB73F /* ProfileController.swift */; };
 		89DF25A82B93496B00BF8F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DF25A72B93496B00BF8F21 /* AppDelegate.swift */; };
 		89DF25AA2B93496B00BF8F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DF25A92B93496B00BF8F21 /* SceneDelegate.swift */; };
 		89DF25B12B93496C00BF8F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89DF25B02B93496C00BF8F21 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		89D199702B95187800CEB73F /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		89D199722B9519A100CEB73F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		89D199742B951B7F00CEB73F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		89D1999A2B96394600CEB73F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		89DF25A42B93496B00BF8F21 /* arlnc-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "arlnc-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DF25A72B93496B00BF8F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89DF25A92B93496B00BF8F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +75,6 @@
 		89D199612B94F3A900CEB73F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				89D1996F2B9516AB00CEB73F /* stories */,
 				89D199632B95139300CEB73F /* UICollectionViewCell.swift */,
 				89D199652B9513D000CEB73F /* UICollectionView.swift */,
 				89D199702B95187800CEB73F /* Constraints.swift */,
@@ -86,6 +87,7 @@
 		89D199622B94F3B100CEB73F /* main */ = {
 			isa = PBXGroup;
 			children = (
+				89D199992B96393300CEB73F /* profile */,
 				89D1996A2B95147A00CEB73F /* search */,
 				89D199692B95146800CEB73F /* home */,
 				89D199672B95140600CEB73F /* MainTabBarController.swift */,
@@ -109,11 +111,12 @@
 			path = search;
 			sourceTree = "<group>";
 		};
-		89D1996F2B9516AB00CEB73F /* stories */ = {
+		89D199992B96393300CEB73F /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				89D1999A2B96394600CEB73F /* ProfileController.swift */,
 			);
-			path = stories;
+			path = profile;
 			sourceTree = "<group>";
 		};
 		89DF259B2B93496B00BF8F21 = {
@@ -218,6 +221,7 @@
 				89D199712B95187800CEB73F /* Constraints.swift in Sources */,
 				89DF25A82B93496B00BF8F21 /* AppDelegate.swift in Sources */,
 				89D199642B95139300CEB73F /* UICollectionViewCell.swift in Sources */,
+				89D1999B2B96394600CEB73F /* ProfileController.swift in Sources */,
 				89D199732B9519A100CEB73F /* UIView.swift in Sources */,
 				89DF25AA2B93496B00BF8F21 /* SceneDelegate.swift in Sources */,
 				89D199752B951B7F00CEB73F /* UIColor.swift in Sources */,
