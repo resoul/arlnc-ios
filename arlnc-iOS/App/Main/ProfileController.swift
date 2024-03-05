@@ -1,13 +1,13 @@
 //
-//  HomeController.swift
+//  ProfileController.swift
 //  arlnc-iOS
 //
-//  Created by resoul on 03.03.2024.
+//  Created by resoul on 05.03.2024.
 //
 
 import UIKit
 
-class HomeController: UIViewController {
+class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
