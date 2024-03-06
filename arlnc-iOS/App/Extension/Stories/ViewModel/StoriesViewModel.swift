@@ -7,6 +7,8 @@
 
 struct StoriesViewModel {
     let user: User
-    let lastViewedIndex: Int
+    let isMe: Bool
+    var isLive: Bool
+    var lastViewedIndex: Int
     let stories: [Story]
 }

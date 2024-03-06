@@ -15,7 +15,7 @@ class HomeController: UIViewController {
             case 0:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(100))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(98), heightDimension: .absolute(115))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
@@ -73,7 +73,6 @@ class HomeController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(cell: StoriesView.self)
-        collectionView.register(cell: StoriesMeView.self)
         
         collectionView.constraints(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
     }
@@ -88,7 +87,7 @@ extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return fetchedData.count + 1
+            return fetchedData.count
         case 1:
             return 0
         default:
@@ -99,19 +98,13 @@ extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
+            let cell = collectionView.dequeueReusableCell(withClass: StoriesView.self, for: indexPath)
+            let stories = fetchedData[indexPath.row]
             if indexPath.row == 0 {
-                let cell = collectionView.dequeueReusableCell(withClass: StoriesMeView.self, for: indexPath)
-                let stories = fetchedData[indexPath.row]
-                let model = StoriesViewModel(user: stories.user, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories)
-                cell.configure(with: model)
-                
+                cell.configure(with: StoriesViewModel(user: stories.user, isMe: true, isLive: false, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories))
                 return cell
             } else {
-                let cell = collectionView.dequeueReusableCell(withClass: StoriesView.self, for: indexPath)
-                let stories = fetchedData[indexPath.row - 1]
-                let model = StoriesViewModel(user: stories.user, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories)
-                cell.configure(with: model)
-                
+                cell.configure(with: StoriesViewModel(user: stories.user, isMe: false, isLive: false, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories))
                 return cell
             }
         case 1:
@@ -148,7 +141,7 @@ extension HomeController: UICollectionViewDelegate {
                 
                 present(controller, animated: true)
             } else {
-                let controller = StoriesPresenterController(stories: fetchedData[indexPath.row].stories)
+                let controller = StoriesController(stories: fetchedData, indexPath: indexPath)
                 controller.modalPresentationStyle = .overFullScreen
                 present(controller, animated: true)
             }

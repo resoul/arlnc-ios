@@ -7,6 +7,8 @@
 
 struct Stories {
     let user: User
+    let isMe: Bool
+    let isLive: Bool
     let lastViewedIndex: Int
     let stories: [Story]
 }
