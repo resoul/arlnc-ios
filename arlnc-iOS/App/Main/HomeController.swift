@@ -2,8 +2,6 @@
 //  HomeController.swift
 //  arlnc-iOS
 //
-//  Created by resoul on 05.03.2024.
-//
 
 import UIKit
 
@@ -136,7 +134,7 @@ extension HomeController: UICollectionViewDelegate {
                 
                 present(controller, animated: true)
             } else {
-                let controller = StoriesPresenterController(viewModel: StoriesViewModel(stories: storiesData.stories, currentIndex: indexPath.row))
+                let controller = StoriesPresenterController(viewModel: StoriesPresenterViewModel(stories: storiesData.stories, currentIndex: indexPath.row))
                 controller.modalPresentationStyle = .overFullScreen
                 present(controller, animated: true)
             }

@@ -4,6 +4,7 @@
 //
 
 struct StoriesViewModel {
-    let stories: [Stories]
-    let currentIndex: Int
+    let user: User
+    let showStorieIndex: Int
+    let stories: [Storie]
 }

@@ -5,12 +5,25 @@
 //  Created by resoul on 05.03.2024.
 //
 
-var me = User(uuid: "Xv7JV1aN5u8AX", username: "resoul.ua", fullName: "YM", profilePicture: "https://instagram.fdnk1-4.fna.fbcdn.net/v/t51.2885-19/47053939_345844452866127_4549742191903244288_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fdnk1-4.fna.fbcdn.net&_nc_cat=103&_nc_ohc=Xv7JV1aN5u8AX-DS9sc&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfD-5cH-vFR6Zw2jlhxHtqjHX7eRZ--D3C-d03exK9WrVA&oe=65EC7B89&_nc_sid=8b3546", isPrivate: false, biography: "Explorer", media: 236, followers: 69, following: 22)
+var me = User(uuid: "Xv7JV1aN5u8AX", username: "resoul.ua", fullName: "YM", profilePicture: "https://uploads.airlance.org/22/avatar.jpg", isPrivate: false, biography: "Explorer", media: 236, followers: 69, following: 22)
 
-var account = User(uuid: "Xv7JV1aN5u7AX", username: "resoul", fullName: "YM", profilePicture: "https://instagram.fdnk1-4.fna.fbcdn.net/v/t51.2885-19/47053939_345844452866127_4549742191903244288_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fdnk1-4.fna.fbcdn.net&_nc_cat=103&_nc_ohc=Xv7JV1aN5u8AX-DS9sc&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfD-5cH-vFR6Zw2jlhxHtqjHX7eRZ--D3C-d03exK9WrVA&oe=65EC7B89&_nc_sid=8b3546", isPrivate: false, biography: "Explorer", media: 236, followers: 69, following: 22)
+var account = User(uuid: "Xv7JV1aN5u7AX", username: "resoul", fullName: "YM", profilePicture: "https://uploads.airlance.org/22/avatar.jpg", isPrivate: false, biography: "Explorer", media: 236, followers: 69, following: 22)
 
 var storie = [
-    Storie(type: .image, path: "https://scontent.cdninstagram.com/v/t51.29350-15/236493749_4335712153130804_3557483292759278855_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi43NTB4MTMzNC5zZHIifQ&_nc_ht=scontent.cdninstagram.com&_nc_cat=108&_nc_ohc=KjneySTRbJsAX_8x6A8&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MjY0MDA4OTMyMTQ1NTc0MTg5Ng%3D%3D.2-ccb7-5&oh=00_AfCGSQbl3ubhEOL8Ip7teqfbyWP7-xWpluPqOsHH2PTy9Q&oe=65EF0F67&_nc_sid=10d13b", date: "1hr")
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236153711_375634934077268_3741895848752662936_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236409314_2958256531083884_340897945131076951_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236452750_196524329189831_1272306585797424879_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236493749_4335712153130804_3557483292759278855_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236512220_423330415721797_6150542845822462931_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236666560_538501423937104_5605207647376237740_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236866248_984006912385839_7911931141984088894_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236971541_209029461078234_784231696019005946_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/236982597_4345962708822760_8558333529909679048_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/238257307_186514896749135_1240845163032602559_n.jpg", date: "1hr"),
+    Storie(type: .image, path: "https://uploads.airlance.org/22/238440237_2713067282329650_1903914208165994197_n.jpg", date: "1hr"),
+    Storie(type: .video, path: "https://uploads.airlance.org/22/238191631_281250753761558_2326865499224532597_n.mp4", date: "1hr"),
+    Storie(type: .video, path: "https://uploads.airlance.org/22/238689329_875604286380211_7558656618610710209_n.mp4", date: "1hr"),
+    Storie(type: .video, path: "https://uploads.airlance.org/22/239013319_811860752817388_6368178735875283046_n.mp4", date: "1hr")
 ]
 
 var storiesData = StoriesData(totalStories: 8, stories: [
