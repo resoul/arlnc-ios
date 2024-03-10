@@ -72,7 +72,7 @@ class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(cell: StoriesView.self)
+        collectionView.register(cell: StoriesViewCell.self)
         
         collectionView.constraints(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
     }
@@ -87,7 +87,7 @@ extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return fetchedData.count
+            return storiesData.totalStories
         case 1:
             return 0
         default:
@@ -98,15 +98,10 @@ extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withClass: StoriesView.self, for: indexPath)
-            let stories = fetchedData[indexPath.row]
-            if indexPath.row == 0 {
-                cell.configure(with: StoriesViewModel(user: stories.user, isMe: true, isLive: false, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories))
-                return cell
-            } else {
-                cell.configure(with: StoriesViewModel(user: stories.user, isMe: false, isLive: false, lastViewedIndex: stories.lastViewedIndex, stories: stories.stories))
-                return cell
-            }
+            let cell = collectionView.dequeueReusableCell(withClass: StoriesViewCell.self, for: indexPath)
+            let stories = storiesData.stories[indexPath.row]
+            cell.configure(with: AccountViewModel(uuid: stories.user.uuid, username: stories.user.username, profilePicture: stories.user.profilePicture))
+            return cell
         case 1:
             return UICollectionViewCell()
         default:
@@ -141,7 +136,7 @@ extension HomeController: UICollectionViewDelegate {
                 
                 present(controller, animated: true)
             } else {
-                let controller = StoriesController(stories: fetchedData, indexPath: indexPath)
+                let controller = StoriesPresenterController(viewModel: StoriesViewModel(stories: storiesData.stories, currentIndex: indexPath.row))
                 controller.modalPresentationStyle = .overFullScreen
                 present(controller, animated: true)
             }

@@ -1,15 +1,13 @@
 //
-//  StoriesAvatarView.swift
+//  StoriesViewAvatarCell.swift
 //  arlnc-iOS
-//
-//  Created by resoul on 06.03.2024.
 //
 
 import UIKit
 
-class StoriesAvatarView: UIView {
+class StoriesViewAvatarCell: UIView {
     
-    private lazy var avatarContainer: UIImageView = {
+    private lazy var avatar: UIImageView = {
         let view = UIImageView()
         view.clipsToBounds = true
         view.layer.borderWidth = 3.0
@@ -18,15 +16,15 @@ class StoriesAvatarView: UIView {
         return view
     }()
     
-    func setAvatar(image: UIImage, origin: CGFloat, scale: CGFloat) {
-        avatarContainer.image = image
-        avatarContainer.frame = CGRect(x: scale, y: scale, width: origin, height: origin)
+    func setupAvatar(image: UIImage, origin: CGFloat, scale: CGFloat) {
+        avatar.image = image
+        avatar.frame = CGRect(x: scale, y: scale, width: origin, height: origin)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
-        addSubview(avatarContainer)
+        addSubview(avatar)
     }
     
     override func layoutSubviews() {
@@ -39,7 +37,7 @@ class StoriesAvatarView: UIView {
         }
         
         layer.cornerRadius = frame.height / 2
-        avatarContainer.layer.cornerRadius = avatarContainer.frame.height / 2
+        avatar.layer.cornerRadius = avatar.frame.height / 2
     }
     
     override class var layerClass: AnyClass {
