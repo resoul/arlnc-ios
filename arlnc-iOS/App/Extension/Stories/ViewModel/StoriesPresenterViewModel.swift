@@ -4,6 +4,6 @@
 //
 
 struct StoriesPresenterViewModel {
-    let stories: [Stories]
-    let currentIndex: Int
+    var stories: [Stories]
+    var currentIndex: Int
 }
